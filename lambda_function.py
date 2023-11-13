@@ -4,7 +4,7 @@ import requests
 
 def lambda_handler(event, context):
     # TODO implement
-    json_even = json.loads(event)
+    json_event = event
     
     payload = {
         'text': f"Issue Created: {json_event['issue']['html_url']}"
@@ -16,4 +16,4 @@ def lambda_handler(event, context):
         slack_url, data=json.dumps(payload), headers={'Content-Type': 'application/json'}
     )
     
-    return response.txt
+    return response.text
